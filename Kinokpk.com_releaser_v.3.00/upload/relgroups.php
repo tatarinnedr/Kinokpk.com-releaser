@@ -81,22 +81,22 @@ if (!$id) {
 </div>
 <div class="relgroups_name">
 <dl class="clearfix">
-	<dt>Название</dt>
-	<dd class="result_name"><a href="relgroups.php?id=<?=$row['id']?>"><?=makesafe($row['name']).($row['private']?' (Приватная)':'') ?></a></dd>
+	<dt>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</dt>
+	<dd class="result_name"><a href="relgroups.php?id=<?=$row['id']?>"><?=makesafe($row['name']).($row['private']?' (&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;)':'') ?></a></dd>
 	<?php if ($row['page_pay'] || $row['private']) {?>
-	<dt>Подписано</dt>
-	<dd><?=(int)$row['users']?> человек</dd>
-	<dt>Информация о подписке</dt>
-	<dd><?=($row['page_pay']?$tracker_lang['pay_required']:$tracker_lang['no_pay']).' ('.($row['subscribe_length']?$row['subscribe_length'].' дней':$tracker_lang['lifetime']).')'?></dd>
+	<dt>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</dt>
+	<dd><?=(int)$row['users']?> &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</dd>
+	<dt>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</dt>
+	<dd><?=($row['page_pay']?$tracker_lang['pay_required']:$tracker_lang['no_pay']).' ('.($row['subscribe_length']?$row['subscribe_length'].' &#65533;&#65533;&#65533;&#65533;':$tracker_lang['lifetime']).')'?></dd>
 	<?php }?>
-	<dt>Специализация</dt>
+	<dt>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</dt>
 	<dd><?=makesafe($row['spec'])?></dd>
 </dl>
 </div>
 <div id="input" class="relgroups_input">
 
 <ul class="relgroups_input">
-	<li><a href="relgroups.php?id=<?=$row['id']?>">Просмотр</a></li>
+	<li><a href="relgroups.php?id=<?=$row['id']?>">&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</a></li>
 	<?php
 	if ($row['private']) {
 		$i_subscribed = mysql_fetch_row(sql_query("SELECT 1 FROM rg_subscribes WHERE userid={$CURUSER['id']} AND rgid={$row['id']}"));
@@ -105,8 +105,8 @@ if (!$id) {
 	}
 	else $open_relgroup= true;
 	if ($open_relgroup) {}
-	elseif ($i_subscribed) print ("<li><a href=\"relgroups.php?id={$row['id']}&amp;action=deny\">Отписаться от группы</a></li><li><a href=\"relgroups.php?id={$row['id']}&action=invite\">{$tracker_lang['create_invite']}</a></li>");
-	else print ("<li>".(($row['private']&&$row['only_invites'])?$tracker_lang['private_group_friend_subscribe']:"<a href=\"".($row['page_pay']?$row['page_pay']:"relgroups.php?id={$row['id']}&action=suggest")."\">Подписаться на релизы</a>")."</li>");
+	elseif ($i_subscribed) print ("<li><a href=\"relgroups.php?id={$row['id']}&amp;action=deny\">&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</a></li><li><a href=\"relgroups.php?id={$row['id']}&action=invite\">{$tracker_lang['create_invite']}</a></li>");
+	else print ("<li>".(($row['private']&&$row['only_invites'])?$tracker_lang['private_group_friend_subscribe']:"<a href=\"".($row['page_pay']?$row['page_pay']:"relgroups.php?id={$row['id']}&action=suggest")."\">&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</a>")."</li>");
 	?>
 </ul>
 </div>
@@ -148,8 +148,8 @@ else {
 <div id="relgroups_header" class="relgroups_header">
 <div align="center"><?=makesafe($row['name']) ?>&nbsp;&nbsp;<?   print(ratearea($row['ratingsum'],$row['id'],'relgroups',($I_OWNER?$row['id']:0))."");?></div>
 <div align="right" style="margin-top: -22px;"><a href="relgroups.php"><img
-	src="/themes/kinokpk/images/strelka.gif" border="0"
-	title="Вернуться к просмотру групп"
+	src="/themes/<?=$ss_uri;?>/images/strelka.gif" border="0"
+	title="&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;"
 	style="margin-top: 5px; margin-right: 5px;" /></a></div>
 
 </div>
@@ -159,17 +159,17 @@ else {
 	title="<?=makesafe($row['name'])?>" /><? $tracker_lang['no_image']?>
 
 <div id="input_right" class="relgroups_input_right"><? //print (int)$row['users'].'&nbsp;';
-		//ПЕРЕДЕЛАТЬ
+		//&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;
 		//$i_subscribed = @mysql_result(sql_query("SELECT 1 FROM rg_subscribes WHERE userid={$CURUSER['id']} AND rgid=$id"),0);
 		if ($row['private'])
 		$i_subscribed = mysql_fetch_row(sql_query("SELECT 1 FROM rg_subscribes WHERE userid={$CURUSER['id']} AND rgid={$row['id']}"));
-		if ($i_subscribed) print ("<li><a href=\"relgroups.php?id={$row['id']}&amp;action=deny\">Отписаться от группы</a></li><li><a href=\"relgroups.php?id={$row['id']}&action=invite\">{$tracker_lang['create_invite']}</a></li>");
-		else print ("<li>".(($row['private']&&$row['only_invites'])?$tracker_lang['private_group_friend_subscribe']:"<a href=\"".($row['page_pay']?$row['page_pay']:"relgroups.php?id=$id&action=suggest")."\">Подписаться на релизы</a>")."</li>");
+		if ($i_subscribed) print ("<li><a href=\"relgroups.php?id={$row['id']}&amp;action=deny\">&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</a></li><li><a href=\"relgroups.php?id={$row['id']}&action=invite\">{$tracker_lang['create_invite']}</a></li>");
+		else print ("<li>".(($row['private']&&$row['only_invites'])?$tracker_lang['private_group_friend_subscribe']:"<a href=\"".($row['page_pay']?$row['page_pay']:"relgroups.php?id=$id&action=suggest")."\">&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</a>")."</li>");
 		?></div>
 </div>
 <div id="boxes_right" class="box_right">
 <div id="box_app_right">
-<h3 class="box_right_block"><span>Директор</span><?print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></h3>
+<h3 class="box_right_block"><span>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</span><?print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></h3>
 <div class="inside basic_infor_summary_list">
 <dl class="infor">
 	<dd><?=$ownersview?></dd>
@@ -179,7 +179,7 @@ else {
 </div>
 <div id="boxes_right" class="box_right">
 <div id="box_app_right_adm">
-<h3 class="box_right_block"><span>Состав Группы</span><? print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></h3>
+<h3 class="box_right_block"><span>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</span><? print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></h3>
 <div class="inside basic_infor_summary_list">
 <dl class="infor">
 	<dd><?=$membersview?></dd>
@@ -189,7 +189,7 @@ else {
 </div>
 <div id="boxes_right" class="box_right">
 <div id="box_app_right_adm">
-<h3 class="box_right_block"><span>Тип Группы</span><? print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></h3>
+<h3 class="box_right_block"><span>&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</span><? print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></h3>
 <div class="inside basic_infor_summary_list">
 <dl class="infor">
 	<dd><?php
@@ -202,10 +202,10 @@ else {
 </div>
 <div id="boxes_right" class="box_right">
 <div id="box_app_right_adm">
-<h3 class="box_right_block"><span>Группы Друзья</span><?print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></h3>
+<h3 class="box_right_block"><span>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</span><?print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></h3>
 <div class="inside basic_infor_summary_list">
 <dl class="infor">
-	<dd>Нет</dd>
+	<dd>&#65533;&#65533;&#65533;</dd>
 
 </div>
 </div>
@@ -217,12 +217,12 @@ else {
 <div id="relgroups_table_left">
 <div id="boxes_left" class="box_left">
 <div id="box_left" style="margin-top: 9px;">
-<h3 class="box_right_left"><span>Информация о группе</span><?print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></h3>
+<h3 class="box_right_left"><span>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</span><?print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></h3>
 <div class="basic_infor_summary_list box_left_page">
 <dl class="infor_left">
-	<dt>Название</dt>
+	<dt>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</dt>
 	<dd><b><?=makesafe($row['name']) ?></b></dd>
-	<dt>Специализация</dt>
+	<dt>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</dt>
 	<dd><?=$row['spec']?></dd>
 	<dt><?=$tracker_lang['description']?></dt>
 	<dd><?=$row['descr']?></dd>
@@ -241,7 +241,7 @@ else {
 		if ($rgusers) { $rgusers = implode(', ',$rgusers);
 		?>
 <div id="box_left" class="box_left" style="margin-top: 9px;">
-<h3 class="box_right_left"><span>Подписчики (последние 10)</span> <?print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></h3>
+<h3 class="box_right_left"><span>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; (&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; 10)</span> <?print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></h3>
 <div class="basic_infor_summary_list box_left_page">
 <dl class="infor_left">
 <?=$rgusers?>
@@ -251,7 +251,7 @@ else {
 <?php }
 	}?>
 <div id="box_left" class="box_left" style="margin-top: 9px;">
-<h3 class="box_right_left"><span>Обсуждение последних релизов</span></h3>
+<h3 class="box_right_left"><span>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</span></h3>
 	<?print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"rgnews.php?id=$id\">{$tracker_lang['create']}</a>" : "").'</div>');
 
 	$resource = $CACHE->get('relgroups-'.$id, 'newsquery');
@@ -275,9 +275,9 @@ else {
 				$content .="<hr/><div align=\"right\">";
 				if ((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) {
 					$content .= "[<a href=\"rgnews.php?action=edit&amp;id=$id&amp;newsid=" . $array['id'] . "&amp;returnto=" . urlencode($_SERVER['PHP_SELF']. "?id=$id")."\"><b>E</b></a>]";
-					$content .= "[<a onclick=\"return confirm('Вы уверены?');\" href=\"rgnews.php?action=delete&amp;id=$id&amp;newsid=" . $array['id'] . "&amp;returnto=" . urlencode($_SERVER['PHP_SELF'] . "?id=$id")."\"><b>D</b></a>] ";
+					$content .= "[<a onclick=\"return confirm('&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;?');\" href=\"rgnews.php?action=delete&amp;id=$id&amp;newsid=" . $array['id'] . "&amp;returnto=" . urlencode($_SERVER['PHP_SELF'] . "?id=$id")."\"><b>D</b></a>] ";
 				}
-				$content .= "Комментариев: ".$array['numcomm']." [<a href=\"rgnewsoverview.php?id=".$array['id']."#comments\">Комментировать</a>]</div>";
+				$content .= "&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;: ".$array['numcomm']." [<a href=\"rgnewsoverview.php?id=".$array['id']."#comments\">&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</a>]</div>";
 				$content .= "</div></div>";
 				$news_flag = 1;
 			} else {
@@ -286,13 +286,13 @@ else {
 				$content .="<hr/><div align=\"right\">";
 				if ((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) {
 					$content .= "[<a href=\"rgnews.php?action=edit&amp;id=$id&amp;newsid=" . $array['id'] . "&amp;returnto=" . urlencode($_SERVER['PHP_SELF'] . "?id=$id")."\"><b>E</b></a>]";
-					$content .= "[<a onclick=\"return confirm('Вы уверены?');\" href=\"rgnews.php?action=delete&amp;id=$id&amp;newsid=" . $array['id'] . "&amp;returnto=" . urlencode($_SERVER['PHP_SELF'] . "?id=$id")."\"><b>D</b></a>] ";
+					$content .= "[<a onclick=\"return confirm('&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;?');\" href=\"rgnews.php?action=delete&amp;id=$id&amp;newsid=" . $array['id'] . "&amp;returnto=" . urlencode($_SERVER['PHP_SELF'] . "?id=$id")."\"><b>D</b></a>] ";
 				}
-				$content .= "Комментариев: ".$array['numcomm']." [<a href=\"rgnewsoverview.php?id=".$array['id']."\">Комментировать</a>]</div>";
+				$content .= "&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;: ".$array['numcomm']." [<a href=\"rgnewsoverview.php?id=".$array['id']."\">&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</a>]</div>";
 				$content .= "</div></div>";
 			}
 		}
-		$content .= "<p align=\"right\">[<a href=\"rgnewsarchive.php?id=$id\">Архив новостей</a>]</p></td></tr></table>\n";
+		$content .= "<p align=\"right\">[<a href=\"rgnewsarchive.php?id=$id\">&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</a>]</p></td></tr></table>\n";
 	} else {
 		$content .= "<table class=\"main\" align=\"center\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tr><td class=\"text\" border=\"0\">";
 		$content .= "<div align=\"center\"><h3>".$tracker_lang['no_news']."</h3></div>\n";
@@ -305,7 +305,7 @@ else {
 </div>
 <div id="box_left_wall" class="box_left"
 	style="margin-top: 9px; margin-bottom: 5px;">
-<h3 class="box_right_left"><span>Комментарии к Группе</span><? print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></a></h3>
+<h3 class="box_right_left"><span>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</span><? print('<div align="center">'.(((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) ? "<a class=\"box_editor_left\" href=\"#\"></a>" : "").'</div>');?></a></h3>
 	<?php
 	begin_frame();
 
@@ -316,10 +316,10 @@ else {
 	if (!$count) {
 		print("<table id=\"comments-table\" class=\"rgcomm\" cellspacing=\"0\" cellPadding=\"5\">");
 		print("<tr><td class=colhead align=\"left\" colspan=\"2\">");
-		print("<div style=\"float: left; width: auto;\" align=\"left\"> :: Список комментариев | <b><u>Новости комментируются отдельно</u></b></div>");
-		print("<div align=\"right\">Добавить комментарий</div>");
+		print("<div style=\"float: left; width: auto;\" align=\"left\"> :: &#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; | <b><u>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</u></b></div>");
+		print("<div align=\"right\">&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</div>");
 		print("</td></tr><tr><td align=\"center\">");
-		print("Комментариев нет. Желаете добавить?");
+		print("&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;. &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;?");
 		print("</td></tr></table>");
 
 	}
@@ -339,7 +339,7 @@ else {
 
 		print("<table id=\"comments-table\" class=\"rgcomm\" cellspacing=\"0\" cellPadding=\"5\">");
 		print("<tr><td class=\"colhead_rgcomm\" align=\"center\">");
-		print("<div style=\"float: left; width: auto;\" align=\"left\"> :: Список комментариев | <b><u>Новости комментируются отдельно</u></b></div>");
+		print("<div style=\"float: left; width: auto;\" align=\"left\"> :: &#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; | <b><u>&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</u></b></div>");
 		print("<div align=\"right\"><b>{$tracker_lang['add_comment']}</b></div>");
 		print("</td></tr>");
 
@@ -358,29 +358,29 @@ else {
 	}
 
 	print ( "<table style=\"margin-top: 2px;\" cellpadding=\"5\" width=\"100%\">" );
-	print("<tr><td class=colhead align=\"left\" colspan=\"2\">  <div id=\"comments\"></div><b>::{$tracker_lang['add_comment']} к релиз группе | ".is_i_notified($id,'rgcomments')."</b></td></tr>");
+	print("<tr><td class=colhead align=\"left\" colspan=\"2\">  <div id=\"comments\"></div><b>::{$tracker_lang['add_comment']} &#65533; &#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533; | ".is_i_notified($id,'rgcomments')."</b></td></tr>");
 	print ( "<tr><td width=\"100%\" align=\"center\" >" );
-	//print("Ваше имя: ");
+	//print("&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;: ");
 	//print("".$CURUSER['username']."<p>");
 	print ( "<form name=comment method=\"post\" action=\"rgcomment.php?action=add\">" );
 	print ( "<table width=\"100%\"><tr><td align=\"center\">" . textbbcode ( "text") . "</td></tr>" );
 
 	print ( "<tr><td  align=\"center\">" );
 	print ( "<input type=\"hidden\" name=\"uid\" value=\"$id\"/>" );
-	print ( "<input type=\"submit\" class=\"btn button\" style=\"margin-top:5px;\" value=\"Разместить комментарий\" />" );
+	print ( "<input type=\"submit\" class=\"btn button\" style=\"margin-top:5px;\" value=\"&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;\" />" );
 	print ( "</td></tr></table></form>" );
 
 
 	/*
 	 print("<table style=\"margin-top: 2px;\" cellpadding=\"5\" width=\"100%\">");
-	 print("<tr><td class=colhead align=\"left\" colspan=\"2\">  <div id=\"comments\"></div><b>::{$tracker_lang['add_comment']} к релиз группе | ".is_i_notified($id,'rgcomments')."</b></td></tr>");
+	 print("<tr><td class=colhead align=\"left\" colspan=\"2\">  <div id=\"comments\"></div><b>::{$tracker_lang['add_comment']} &#65533; &#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533; | ".is_i_notified($id,'rgcomments')."</b></td></tr>");
 	 print("<tr><td id=\"comments1\"  class=\"edittd\" align=\"center\" style=\" overflow:hidden; height:385px;\"");
 	 print ( "<form name=comment method=\"post\" action=\"rgcomment.php?action=add\">" );
 	 print ( "<table width=\"100%\"><tr><td align=\"center\">" . textbbcode ( "text") . "</td></tr>" );
 
 	 print ( "<tr><td  align=\"center\">" );
 	 print ( "<input type=\"hidden\" name=\"uid\" value=\"$id\"/>" );
-	 print ( "<input type=\"submit\" class=\"btn button\" style=\"margin-top:5px;\" value=\"Разместить комментарий\" />" );
+	 print ( "<input type=\"submit\" class=\"btn button\" style=\"margin-top:5px;\" value=\"&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;\" />" );
 	 print ( "</td></tr></table></form>" );
 
 	 print('</td></tr></table>');
@@ -419,9 +419,9 @@ else {
 				$content .="<hr/><div align=\"right\">";
 				if ((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) {
 					$content .= "[<a href=\"rgnews.php?action=edit&amp;id=$id&amp;newsid=" . $array['id'] . "&amp;returnto=" . urlencode($_SERVER['PHP_SELF']. "?id=$id")."\"><b>E</b></a>]";
-					$content .= "[<a onclick=\"return confirm('Вы уверены?');\" href=\"rgnews.php?action=delete&amp;id=$id&amp;newsid=" . $array['id'] . "&amp;returnto=" . urlencode($_SERVER['PHP_SELF'] . "?id=$id")."\"><b>D</b></a>] ";
+					$content .= "[<a onclick=\"return confirm('&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;?');\" href=\"rgnews.php?action=delete&amp;id=$id&amp;newsid=" . $array['id'] . "&amp;returnto=" . urlencode($_SERVER['PHP_SELF'] . "?id=$id")."\"><b>D</b></a>] ";
 				}
-				$content .= "Комментариев: ".$array['numcomm']." [<a href=\"rgnewsoverview.php?id=".$array['id']."#comments\">Комментировать</a>]</div>";
+				$content .= "&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;: ".$array['numcomm']." [<a href=\"rgnewsoverview.php?id=".$array['id']."#comments\">&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</a>]</div>";
 				$content .= "</div></div>";
 				$news_flag = 1;
 			} else {
@@ -430,13 +430,13 @@ else {
 				$content .="<hr/><div align=\"right\">";
 				if ((get_user_class() >= UC_ADMINISTRATOR) || $I_OWNER) {
 					$content .= "[<a href=\"rgnews.php?action=edit&amp;id=$id&amp;newsid=" . $array['id'] . "&amp;returnto=" . urlencode($_SERVER['PHP_SELF'] . "?id=$id")."\"><b>E</b></a>]";
-					$content .= "[<a onclick=\"return confirm('Вы уверены?');\" href=\"rgnews.php?action=delete&amp;id=$id&amp;newsid=" . $array['id'] . "&amp;returnto=" . urlencode($_SERVER['PHP_SELF'] . "?id=$id")."\"><b>D</b></a>] ";
+					$content .= "[<a onclick=\"return confirm('&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;?');\" href=\"rgnews.php?action=delete&amp;id=$id&amp;newsid=" . $array['id'] . "&amp;returnto=" . urlencode($_SERVER['PHP_SELF'] . "?id=$id")."\"><b>D</b></a>] ";
 				}
-				$content .= "Комментариев: ".$array['numcomm']." [<a href=\"rgnewsoverview.php?id=".$array['id']."\">Комментировать</a>]</div>";
+				$content .= "&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;: ".$array['numcomm']." [<a href=\"rgnewsoverview.php?id=".$array['id']."\">&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</a>]</div>";
 				$content .= "</div></div>";
 			}
 		}
-		$content .= "<p align=\"right\">[<a href=\"rgnewsarchive.php?id=$id\">Архив новостей</a>]</p></td></tr></table>\n";
+		$content .= "<p align=\"right\">[<a href=\"rgnewsarchive.php?id=$id\">&#65533;&#65533;&#65533;&#65533;&#65533; &#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;&#65533;</a>]</p></td></tr></table>\n";
 	} else {
 		$content .= "<table class=\"main\" align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\"><tr><td class=\"text\">";
 		$content .= "<div align=\"center\"><h3>".$tracker_lang['no_news']."</h3></div>\n";
@@ -459,9 +459,9 @@ else {
 		if ($_SERVER['REQUEST_METHOD']<>'POST') {
 			$message = '';
 			if (!$row['only_invites'])
-			$message .= sprintf($tracker_lang['join_notice'],$row['name'],($row['subscribe_length']?"{$row['subscribe_length']} дней":$tracker_lang['lifetime']),$row['amount'],$CURUSER['discount']);
+			$message .= sprintf($tracker_lang['join_notice'],$row['name'],($row['subscribe_length']?"{$row['subscribe_length']} &#65533;&#65533;&#65533;&#65533;":$tracker_lang['lifetime']),$row['amount'],$CURUSER['discount']);
 			else
-			$message .= sprintf($tracker_lang['join_by_invite'],$row['name'],($row['subscribe_length']?"{$row['subscribe_length']} дней":$tracker_lang['lifetime']),$invitecode,$row['name']);
+			$message .= sprintf($tracker_lang['join_by_invite'],$row['name'],($row['subscribe_length']?"{$row['subscribe_length']} &#65533;&#65533;&#65533;&#65533;":$tracker_lang['lifetime']),$invitecode,$row['name']);
 			$message .= "<br/><div align=\"center\"><form action=\"relgroups.php?id=$id&action=suggest\" method=\"POST\"><input type=\"hidden\" name=\"invitecode\" value=\"$invitecode\"><input type=\"submit\" value=\"{$tracker_lang['continue']}\"></form><hr/><form action=\"relgroups.php?id=$id&action=suggest\" method=\"POST\">{$tracker_lang['enter_invite_code']}<input type=\"text\" name=\"invitecode\" size=\"32\" maxlength=\"32\" value=\"$invitecode\">&nbsp;<input type=\"submit\" value=\"{$tracker_lang['continue']}\"></form></div>";
 			stderr($tracker_lang['rginvite_my'],$message,'success');
 		}
@@ -510,7 +510,7 @@ else {
 			die();
 		} else {
 			if (!isset($_GET['ok'])) {
-				stderr($tracker_lang['invite_code'],sprintf($tracker_lang['invite_notice'],$row['name'],($row['subscribe_length']?"{$row['subscribe_length']} дней":$tracker_lang['lifetime']),$row['amount'],$CURUSER['discount'])
+				stderr($tracker_lang['invite_code'],sprintf($tracker_lang['invite_notice'],$row['name'],($row['subscribe_length']?"{$row['subscribe_length']} &#65533;&#65533;&#65533;&#65533;":$tracker_lang['lifetime']),$row['amount'],$CURUSER['discount'])
 				. "<br/><div align=\"center\"><form action=\"relgroups.php?id=$id&action=invite&ok\" method=\"POST\"><input type=\"submit\" value=\"{$tracker_lang['continue']}\"></form></div>",'success');
 			} else {
 				if ($CURUSER['discount']<$row['amount']) stderr($tracker_lang['error'],$tracker_lang['no_discount_invite']);
